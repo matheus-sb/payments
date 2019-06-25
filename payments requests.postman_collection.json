@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "payments requests",
+		"_postman_id": "85a15b2f-7ee8-34e9-801c-f98bf1934b8a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all payments",
+			"request": {
+				"url": "localhost:8080/payment",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"client\": {\n\t\t\"id\": 1\n\t},\n\t\"buyer\": {\n\t\t\"name\": \"teste1\",\n\t\t\"email\": \"aaa1@aaa.com\",\n\t\t\"cpf\": \"07771493629\"\n\t},\n\t\"type\": \"CARTAO_CREDITO\",\n\t\"amount\": 100.00,\n\t\"cardNumber\": \"5304131478583391\",\n\t\"cardHolderName\": \"Joaquim Trindade\",\n\t\"cardCCV\": \"418\",\n\t\"cardExpirationDate\": \"01/2021\"\n}"
+				},
+				"description": "Endpoint responsible for get payments"
+			},
+			"response": []
+		},
+		{
+			"name": "Create boleto payments",
+			"request": {
+				"url": "localhost:8080/payment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"client\": {\n\t\t\"id\": 1\n\t},\n\t\"buyer\": {\n\t\t\"name\": \"teste2\",\n\t\t\"email\": \"aaa@aaa.com\",\n\t\t\"cpf\": \"07771493629\"\n\t},\n\t\"type\": \"BOLETO\",\n\t\"amount\": 300\n}"
+				},
+				"description": "Endpoint responsible for create boleto payments"
+			},
+			"response": []
+		},
+		{
+			"name": "Create credit card payments",
+			"request": {
+				"url": "localhost:8080/payment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"client\": {\n\t\t\"id\": 1\n\t},\n\t\"buyer\": {\n\t\t\"name\": \"teste1\",\n\t\t\"email\": \"aaa1@aaa.com\",\n\t\t\"cpf\": \"07771493629\"\n\t},\n\t\"type\": \"CARTAO_CREDITO\",\n\t\"amount\": 100.00,\n\t\"cardNumber\": \"5304131478583391\",\n\t\"cardHolderName\": \"Joaquim Trindade\",\n\t\"cardCCV\": \"418\",\n\t\"cardExpirationDate\": \"01/2021\"\n}"
+				},
+				"description": "Endpoint responsible for create credit card payments"
+			},
+			"response": []
+		}
+	]
+}
